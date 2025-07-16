@@ -115,24 +115,29 @@ def index():
 
         uploaded_files = request.files.getlist('resumes')
         for file in uploaded_files:
-            filename = file.filename
-            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            file.save(filepath)
-            content = extract_text(filepath)
-            score, title_score, jd_score, skill_score = calc_score(content, job_title, job_desc, skill_list)
-            email = extract_email(content)
-            matched_skills = [skill for skill in jd_tokens if skill in content]
+            try:
+                filename = file.filename
+                filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                file.save(filepath)
 
-            resumes.append({
-                'name': filename,
-                'email': email,
-                'score': score,
-                'title_score': title_score,
-                'jd_score': jd_score,
-                'skill_score': skill_score,
-                'skills': ', '.join(matched_skills) if matched_skills else 'None',
-                'file': filename
-            })
+                content = extract_text(filepath)
+                score, title_score, jd_score, skill_score = calc_score(content, job_title, job_desc, skill_list)
+                email = extract_email(content)
+                matched_skills = [skill for skill in jd_tokens if skill in content]
+
+                resumes.append({
+                    'name': filename,
+                    'email': email,
+                    'score': score,
+                    'title_score': title_score,
+                    'jd_score': jd_score,
+                    'skill_score': skill_score,
+                    'skills': ', '.join(matched_skills) if matched_skills else 'None',
+                    'file': filename
+                })
+            except Exception as e:
+                print(f"[ERROR] Failed to process {file.filename}: {e}")
+                continue
 
         resumes.sort(key=lambda x: x['score'], reverse=True)
         session['ranked'] = resumes
