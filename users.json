@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Aiswharya",
+        "company": "ABC",
+        "email": "aishwaryakongara28@gmail.com",
+        "password": "scrypt:32768:8:1$IeMZm9E5mOZJldbl$240ba648dcb5fa3e1e55ad7067c692e71f7399c8bc043dc529a8308ec68d8bae0936ab5a287691a1e5776b7c457d1179bc184712e48bd09e9ab40b0828717c40"
+    },
+    {
+        "name": "Aiswharya",
+        "company": "ABC",
+        "email": "aishwaryakongara28@gmail.com",
+        "password": "scrypt:32768:8:1$fd7Sp0aSWc6Z2Xqw$251785ec03611b5b626ff49c4e590ad9cfe5290fcf821abaff2955c8b59eb1a574de8858f33b35be85ea1b3d79af70d9bfe638695311a55d9a196ae5a24fb1f3"
+    }
+]

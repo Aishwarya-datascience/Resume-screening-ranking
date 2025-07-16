@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume AI Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      background-color: #f5f7fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .container-fluid {
+      height: 100vh;
+    }
+    .left-panel {
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: white;
+      padding: 50px;
+    }
+    .logo-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .logo-title span {
+      background: linear-gradient(to right, #ffffff, #ffe8a0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .feature-icon {
+      width: 24px;
+      margin-right: 10px;
+    }
+    .highlight-metric {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    .metric-label {
+      font-size: 14px;
+    }
+    .right-panel {
+      background-color: white;
+      padding: 60px 40px;
+    }
+    .form-heading {
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .btn-custom {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid d-flex">
+    <!-- Left Panel -->
+    <div class="col-md-6 left-panel d-flex flex-column justify-content-center">
+      <div class="mb-5">
+        <div class="logo-title">
+          <img src="https://cdn-icons-png.flaticon.com/128/7017/7017667.png" width="30">
+          <span>Resume</span>AI
+        </div>
+      </div>
+      <h2>Find the <span style="color: #ffeaa7;">Perfect Candidate</span></h2>
+      <p>Transform your hiring process with intelligent resume screening. Our AI analyzes candidates and ranks them based on job requirements.</p>
+      <div class="mt-4">
+        <p><img src="https://cdn-icons-png.flaticon.com/128/751/751856.png" class="feature-icon"> <strong>AI-Powered Screening</strong><br><small>Advanced NLP algorithms analyze resumes with precision</small></p>
+        <p><img src="https://cdn-icons-png.flaticon.com/128/751/751856.png" class="feature-icon"> <strong>Smart Matching</strong><br><small>Context-aware keyword extraction to match exact job requirements</small></p>
+        <p><img src="https://cdn-icons-png.flaticon.com/128/751/751856.png" class="feature-icon"> <strong>Secure Processing</strong><br><small>Your data is encrypted and safely stored</small></p>
+      </div>
+      <div class="d-flex gap-4 mt-4">
+        <div>
+          <p class="highlight-metric">95%</p>
+          <div class="metric-label">Accuracy</div>
+        </div>
+        <div>
+          <p class="highlight-metric">10x</p>
+          <div class="metric-label">Faster Screening</div>
+        </div>
+        <div>
+          <p class="highlight-metric">24/7</p>
+          <div class="metric-label">Availability</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="col-md-6 right-panel d-flex flex-column justify-content-center">
+      <form method="POST" action="/login" class="mb-4">
+        <div class="form-heading">Login</div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" required>
+        </div>
+        <button class="btn btn-primary btn-custom" type="submit">Login</button>
+      </form>
+
+      <form method="POST" action="/signup">
+        <div class="form-heading">Or Signup</div>
+        <div class="mb-2">
+          <label class="form-label">Full Name</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Company Name</label>
+          <input type="text" name="company" class="form-control" required>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="mb-2">
+          <label class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" required>
+        </div>
+        <button class="btn btn-outline-primary btn-custom" type="submit">Signup</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
