@@ -1,0 +1,12 @@
+Flask
+gunicorn
+PyMuPDF
+python-docx
+Werkzeug
+Jinja2
+itsdangerous
+click
+MarkupSafe
+
+pandas
+numpy
