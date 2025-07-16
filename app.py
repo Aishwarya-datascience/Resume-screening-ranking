@@ -15,6 +15,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
+# ------------------- Utility Functions -------------------
+
 def extract_text(file_path):
     text = ''
     if file_path.endswith('.pdf'):
@@ -65,6 +67,8 @@ def load_users():
             except:
                 return []
     return []
+
+# ------------------- Routes -------------------
 
 @app.route('/')
 def home():
@@ -179,6 +183,8 @@ def reject():
     min_score = int(request.form.get('min_score', 50))
     session['ranked'] = [r for r in resumes if r['score'] >= min_score]
     return redirect('/index')
+
+# ------------------- Run App -------------------
 
 if __name__ == '__main__':
     app.run(debug=True)
